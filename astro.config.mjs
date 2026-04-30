@@ -20,6 +20,6 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://yourwebsite.com',
+  site: 'https://fatber4.github.io',
   integrations: [sitemap(), mdx()]
 });
