@@ -20,7 +20,7 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://fatber4.github.io',
-   base: '/microblog_astro',
+  site: 'https://fatber4.github.io/microblog',
+  base: '/microblog',
   integrations: [sitemap(), mdx()]
 });

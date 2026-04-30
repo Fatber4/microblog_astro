@@ -1,14 +1,15 @@
 ---
 import "../styles/global.css";
 import { AstroSeo } from "@lexingtonthemes/seo";
+const baseUrl = Astro.site ?? "https://fatber4.github.io/microblog";
 ---
 
 <AstroSeo
   title="Blog"
   description="A detailed description of your page content."
-  canonical="https://fatber4.github.io/microblog_astro/"
+  canonical={`${baseUrl}/`}
   openGraph={{
-    url: "hhttps://fatber4.github.io/microblog_astro/",
+    url: `${baseUrl}/`,
     title: "Blog",
     description: "A detailed description of your page content.",
     images: [
@@ -44,22 +45,22 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 <meta name="author" content="Your Name or Company Name" />
 
 <!-- Favicons -->
-<link rel="icon" href="/microblog_astro/favicon.ico" sizes="any" />
-<link rel="icon" href="/microblog_astro/icon.svg" type="image/svg+xml" />
-<link rel="apple-touch-icon" href="/microblog_astro/apple-touch-icon.png" />
-<link rel="manifest" href="/microblog_astro/manifest.webmanifest" />
+<link rel="icon" href={Astro.resolve("/favicon.ico")} sizes="any" />
+<link rel="icon" href={Astro.resolve("/icon.svg")} type="image/svg+xml" />
+<link rel="apple-touch-icon" href={Astro.resolve("/apple-touch-icon.png")} />
+<link rel="manifest" href={Astro.resolve("/manifest.webmanifest")} />
 
 <!-- Favicon for IE -->
-<link rel="shortcut icon" href="/microblog_astro/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href={Astro.resolve("/favicon.ico")} type="image/x-icon" />
 
 <!-- Favicons for different sizes -->
-<link rel="icon" type="/microblog_astro/image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="icon" type="/microblog_astro/image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="/microblog_astro/image/png" sizes="48x48" href="/favicon-48x48.png" />
+<link rel="icon" type="image/png" sizes="16x16" href={Astro.resolve("/favicon-16x16.png")} />
+<link rel="icon" type="image/png" sizes="32x32" href={Astro.resolve("/favicon-32x32.png")} />
+<link rel="icon" type="image/png" sizes="48x48" href={Astro.resolve("/favicon-48x48.png")} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.yourwebsite.com/" />
+<meta property="og:url" content={baseUrl} />
 <meta property="og:title" content="Your Website Title" />
 <meta
   property="og:description"
@@ -72,7 +73,7 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://www.yourwebsite.com/" />
+<meta property="twitter:url" content={baseUrl} />
 <meta property="twitter:title" content="Your Website Title" />
 <meta
   property="twitter:description"
@@ -84,7 +85,7 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 />
 
 <!-- Canonical URL -->
-<link rel="canonical" href="https://www.yourwebsite.com/" />
+<link rel="canonical" href={baseUrl} />
 
 <!-- Additional SEO -->
 <meta name="robots" content="index, follow" />
