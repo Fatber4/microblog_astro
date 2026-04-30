@@ -21,5 +21,6 @@ export default defineConfig({
     drafts: true
   },
   site: 'https://fatber4.github.io',
+   base: '/microblog_astro'
   integrations: [sitemap(), mdx()]
 });
