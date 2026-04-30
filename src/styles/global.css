@@ -28,7 +28,7 @@
   }
 }
 :root {
-  --astro-code-color-text: #000000;
+  --astro-code-color-text: #1d1d1d;
   --astro-code-background: #f5f5f5;
   --astro-code-token-constant: #00000080;
   --astro-code-token-string: #00000050;
