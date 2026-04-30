@@ -29,6 +29,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+const basePath = Astro.site ? new URL(Astro.site).pathname.replace(/\/$/, "") : "";
 ---
 
 <BaseLayout pageTitle={tag}>
@@ -43,7 +44,7 @@ const { posts } = Astro.props;
         {
           posts.map((post) => (
             <BlogEntries
-              url={"/posts/" + post.id}
+              url={`${basePath}/posts/${post.id}`}
               title={post.data.title}
               description={post.data.description}
               alt={post.data.title}

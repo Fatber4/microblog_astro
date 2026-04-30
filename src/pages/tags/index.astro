@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 const allPosts = await getCollection("posts");
 const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 const sortedTags = tags.sort((a, b) => a.localeCompare(b)); // Sort tags alphabetically
+const basePath = Astro.site ? new URL(Astro.site).pathname.replace(/\/$/, "") : "";
 
 const pageTitle = "Tag Index";
 ---
@@ -21,7 +22,7 @@ const pageTitle = "Tag Index";
           sortedTags.map((tag) => (
             <a
               class=" hover:text-blue-500 text-xs font-medium text-base-600"
-              href={`/tags/${tag}`}
+              href={`${basePath}/tags/${tag}`}
             >
               {tag}
             </a>

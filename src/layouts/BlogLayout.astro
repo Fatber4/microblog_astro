@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 const { frontmatter } = Astro.props;
+const basePath = Astro.site ? new URL(Astro.site).pathname.replace(/\/$/, "") : "";
 ---
 
 <BaseLayout>
@@ -35,7 +36,7 @@ const { frontmatter } = Astro.props;
             {
               frontmatter.tags.map((tag) => (
                 <span class="hover:text-blue-500 text-xs font-medium text-base-600">
-                  <a href={`/tags/${tag}`}>{tag}</a>
+                  <a href={`${basePath}/tags/${tag}`}>{tag}</a>
                 </span>
               ))
             }

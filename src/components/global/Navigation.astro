@@ -1,9 +1,12 @@
+---
+const basePath = Astro.site ? new URL(Astro.site).pathname.replace(/\/$/, "") : "";
+---
 <div
   x-data="{ open: false }"
   class="relative flex flex-col w-full mx-auto rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row"
 >
   <div class="flex flex-row items-center justify-between py-2 md:justify-start">
-    <a class="text-base font-medium tracking-tight uppercase" href="/">
+    <a class="text-base font-medium tracking-tight uppercase" href={`${basePath}/`}>
       microblog
     </a>
     <button

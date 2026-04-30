@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import { AstroSeo } from "@lexingtonthemes/seo";
-const baseUrl = Astro.site ?? "https://fatber4.github.io/";
-const basePath = "/microblog";
+const baseUrl = Astro.site ?? "https://fatber4.github.io/microblog";
+const basePath = Astro.site ? new URL(Astro.site).pathname.replace(/\/$/, "") : "/microblog";
 ---
 
 <AstroSeo
@@ -93,7 +93,7 @@ const basePath = "/microblog";
 <meta name="googlebot" content="index, follow" />
 
 <!-- Apple Touch Icon (already included in favicons, but keeping for backwards compatibility) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href={`${basePath}/apple-touch-icon.png`} />
 
 <!-- Theme Color for Mobile Browsers -->
 <meta name="theme-color" content="#ffffff" />
